@@ -1,0 +1,20 @@
+{
+  "name": "folding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "devbuild": "vite build && vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^4.4.4"
+  },
+  "files": [
+    "src/css/style.css"
+  ]
+}
