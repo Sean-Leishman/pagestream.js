@@ -5,8 +5,8 @@ module.exports = defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/js/main.js"),
-      name: "folding.js",
-      fileName: (format) => `folding.${format}.js`,
+      name: "pagestream.js",
+      fileName: (format) => `pagestream.${format}.js`,
     },
   },
 });
