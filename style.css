@@ -7,3 +7,7 @@
 .section3 {
   background-color: green;
 }
+
+body {
+  overflow-y: hidden;
+}

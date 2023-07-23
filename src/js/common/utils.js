@@ -26,7 +26,7 @@ function easing() {
 export function addAnimation(element) {
   //let transition = "transform " + 500 + "ms ease";
   let transition =
-    "transform " + 500 + "ms cubic-bezier(0.915, 0.055, 0.000, 1.005)";
+    "transform " + 700 + "ms cubic-bezier(0.915, 0.055, 0.000, 1.005)";
 
   return css(element, {
     "-webkit-transition": transition,
@@ -41,4 +41,26 @@ export function getTransforms(translate3d) {
     "-ms-transform": translate3d,
     transform: translate3d,
   };
+}
+
+export function getAverage(list, number) {
+  let sum = 0;
+  let llist = list.slice(Math.max(list.length - number, 1));
+
+  for (let i of llist) {
+    sum += i;
+  }
+  return sum / llist.length;
+}
+
+export function addClass(el, className) {
+  el.classList.add(className);
+}
+
+export function removeClass(el, className) {
+  el.classList.remove(className);
+}
+
+export function hasClass(el, className) {
+  return el.classList.contains(className);
 }

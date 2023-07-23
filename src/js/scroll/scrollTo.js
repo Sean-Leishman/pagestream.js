@@ -10,16 +10,17 @@ function performScroll(v) {
   utils.css(container, utils.getTransforms(translate));
 }
 
-function getOffset(section1, section2) {
+function getOffset(section) {
   return {
-    dtop: section2.offsetTop,
+    dtop: section.offsetTop,
   };
 }
 
-export function scrollPage(origin_section, destination_section) {
-  let origin_el = origin_section;
-  let dest_el = destination_section;
+export function scrollPage(destination_section) {
+  console.log("scroll triggered");
 
-  let v = getOffset(origin_section, destination_section);
+  let dest_el = destination_section.item;
+
+  let v = getOffset(dest_el);
   performScroll(v);
 }
