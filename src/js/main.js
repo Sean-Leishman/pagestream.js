@@ -7,6 +7,11 @@ import { events } from "./common/events";
 
 function main() {
   window.scrollTo(0, 0);
+
+  if (history.scrollRestoration) {
+    history.scrollRestoration = "manual";
+  }
+
   EventEmitter.emit(events.initialise);
   EventEmitter.emit(events.bindEvents);
 }
