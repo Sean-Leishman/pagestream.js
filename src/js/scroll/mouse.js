@@ -1,5 +1,6 @@
 import { EventEmitter } from "../common/eventEmitter";
 import { events } from "../common/events";
+import { options } from "../common/options";
 import { state } from "../common/state";
 import { moveSectionDown, moveSectionUp } from "./moveSection";
 import { getAverage } from "../common/utils";
@@ -10,6 +11,9 @@ let priorScrolls = [];
 
 function mouseMoveHandler(event) {
   // Check for auto scroll (if so return)
+  if (options.autoScroll) {
+    return;
+  }
 
   if (state.canScroll) {
     if (event.pageY < oldPageY) {
