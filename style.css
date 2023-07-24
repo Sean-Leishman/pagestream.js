@@ -8,6 +8,10 @@
   background-color: green;
 }
 
+.slide2 {
+  background-color: cyan;
+}
+
 body {
   overflow-y: hidden;
 }

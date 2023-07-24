@@ -1,5 +1,6 @@
 import "../css/style.css";
 import "./scroll";
+import "./slide";
 
 import "./state";
 import { EventEmitter } from "./common/eventEmitter";

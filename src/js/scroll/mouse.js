@@ -1,9 +1,10 @@
 import { EventEmitter } from "../common/eventEmitter";
 import { events } from "../common/events";
-import { options } from "../common/options";
+import { getOptions } from "../common/options";
 import { state } from "../common/state";
 import { moveSectionDown, moveSectionUp } from "./moveSection";
 import { getAverage } from "../common/utils";
+import { scrollHandler } from "./scrollHandler";
 
 let oldPageY = 0;
 let prevTime = 0;
@@ -11,7 +12,7 @@ let priorScrolls = [];
 
 function mouseMoveHandler(event) {
   // Check for auto scroll (if so return)
-  if (options.autoScroll) {
+  if (getOptions().autoScroll) {
     return;
   }
 
@@ -80,11 +81,7 @@ function mouseWheelHandler(e) {
     let isAccelerating = avgEnd >= avgMiddle;
 
     if (isAccelerating && isScrollingVertically) {
-      if (direction === "down") {
-        moveSectionDown();
-      } else if (direction === "up") {
-        moveSectionUp();
-      }
+      scrollHandler(direction);
     }
   }
 }

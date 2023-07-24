@@ -64,3 +64,10 @@ export function removeClass(el, className) {
 export function hasClass(el, className) {
   return el.classList.contains(className);
 }
+
+export function getScrollTop() {
+  var docElement = document.documentElement;
+  return (
+    (window.pageYOffset || docElement.scrollTop) - (docElement.clientTop || 0)
+  );
+}
